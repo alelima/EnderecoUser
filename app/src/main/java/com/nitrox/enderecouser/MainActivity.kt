@@ -20,15 +20,13 @@ class MainActivity : AppCompatActivity() {
                 val selectionClause = "id" + " = ?"
                 val selectionArgs = arrayOf("3")
                 val cursor = contentResolver.query(
-                    Uri.parse("content://com.nitrox.enderecoex.provider/endereco"), null, selectionClause, selectionArgs, null
+                    //Uri.parse("content://com.nitrox.enderecoex.provider/endereco"), null, selectionClause, selectionArgs, null
+                    Uri.parse("content://com.nitrox.enderecoex.provider/endereco"), null, null, null, null
                 )
                 //cursor.moveToFirst();
                 cursor.move(1)
                 Log.v(TAG, "Cursor da consulta: ${cursor.getString(0)}")
             }
         }.execute()
-
-
-
     }
 }
